@@ -1,6 +1,6 @@
 # STM32 Makefile to VSCode converter
 
-##Background
+## Background
 
 I have been using STM32CubeIDE for a while but I just can't get used to it, the IDE feels too slow (Eclipse is probably at fault here). This is why I have been looking for alternatives such as Visual Studio Code, which feels much faster. I tried a plugin, stm32-for-vscode, but did not convince me because any change applied to the DEBUG or optimizations flags in the Makefile are ignored, they are hardcoded in the extension.
 
@@ -10,7 +10,7 @@ This is why I decided to write a batch file (easier than a VSCode extension) tha
 - Defines list
 
 
-##Repository description
+## Repository description
 
 This repository contains a bat file that imports a STM32CubeMX generated Makefile into Visual Studio Code, meaning that some changes applied to the Makefile (those described in the previous bullet points) are imported into the c_cpp_properties.json, which is overwritten. On the other hand, the launch.json file is filled with a default configuration for debugging.
 
@@ -30,7 +30,7 @@ And even if VSCode is not used, the following programs are required to create/co
 - [OpenOCD](https://gnutoolchains.com/arm-eabi/openocd/)
 
 
-##Usage
+## Usage
 
 Copy the following files from this repository to the destination project, and overwrite the existing ones:
 - update_vscode.bat
@@ -53,7 +53,7 @@ A limitation of this project is that if you want to change the IntelliSense conf
 
 Note: It is very probable that the launch.json part of the batch file will have to be customized depending on the target microcontroller. You should go to "OpenOCD-20200729-0.10.0\share\openocd\scripts\target" and find the required .cfg to be used. After that, update the batch script with it instead of the default "stm32g4x.cfg"
 
-##Dependencies
+## Dependencies
 
 This project has been tested with the following resources:
 - STM32CubeMX v6.1.0

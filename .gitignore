@@ -1,0 +1,5 @@
+test/build/
+test/.vscode/.cortex-debug.peripherals.state.json
+test/.vscode/.cortex-debug.registers.state.json
+test/.vscode/c_cpp_properties.json
+test/.vscode/launch.json

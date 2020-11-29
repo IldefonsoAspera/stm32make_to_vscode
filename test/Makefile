@@ -108,7 +108,7 @@ C_DEFS =  \
 -DSTM32G474xx
 
 ifeq ($(DEBUG), 1)
-CFLAGS += -g -gdwarf-2
+C_DEFS += -DDEBUG
 endif
 
 # AS includes
@@ -186,8 +186,8 @@ $(BUILD_DIR):
 # clean up
 #######################################
 clean:
-	-rm -fR $(BUILD_DIR)
-  
+	if exist $(BUILD_DIR) (rmdir /Q /S $(BUILD_DIR))
+
 #######################################
 # dependencies
 #######################################

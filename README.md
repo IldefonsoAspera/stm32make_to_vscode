@@ -44,6 +44,8 @@ C_DEFS += -DDEBUG
 endif
 The batch script accepts it because I like to add a DEBUG flag to the project.
 
+The scripts supports SWO output printed to the terminal, remember to customize the launch.json section in the batch file with the CPU speed. The SWO output can then be found under "Output" tab and then selecting the "SWO output" item in the drop-down list in VS Code.
+
 Not related to this project, but the STM32CubeMX generated Makefile needs a line change if executed under Windows, in "clean" replace this:
 	-rm -fR $(BUILD_DIR)
 with this:

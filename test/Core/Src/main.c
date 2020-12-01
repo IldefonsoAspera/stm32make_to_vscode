@@ -22,7 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "string.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -56,7 +56,22 @@ static void MX_LPUART1_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+int _write(int file, char *ptr, int len)
+{
+	int DataIdx;
 
+	for (DataIdx = 0; DataIdx < len; DataIdx++)
+	{
+	   ITM_SendChar( *ptr++ );
+	}
+
+	return len;
+}
+
+void print_string(char* str)
+{
+  _write(0, str, strlen(str));
+}
 /* USER CODE END 0 */
 
 /**
@@ -97,7 +112,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+    print_string("Test string\r\n");
+    HAL_Delay(500);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
